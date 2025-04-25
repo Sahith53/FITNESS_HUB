@@ -68,8 +68,15 @@
                         </div>
                         <div class="col-lg-4">
                             <label for="profileGenderInput" class="form-label">Gender</label>
-                            <input type="text" class="form-control input-phone"
-                                value="gender" readonly />
+                            <select class="form-control" id="profileGenderInput" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="M" {{ $user->gender === 'M' ? 'selected' : '' }}>Male</option>
+                                <option value="F" {{ $user->gender === 'F' ? 'selected' : '' }}>Female</option>
+                                <option value="O" {{ $user->gender === 'O' ? 'selected' : '' }}>Other</option>
+                            </select>
+                            @error('gender')
+                            <div class="">{{$message}}</div>
+                            @enderror
                         </div>
                         <div class="col-lg-6">
                             <label for="profilePhoneInput" class="form-label">Phone</label>
@@ -82,9 +89,14 @@
                         </div>
                         <div class="col-lg-6">
                             <label for="profileBirthdayInput" class="form-label">Birthday</label>
-                            <input type="date" class="form-control input-date" name="dob" value="{{$user->dob}}" id="profileBirthdayInput"
-                                readonly />
-                            
+                            <input type="date" class="form-control input-date" name="dob" 
+                                value="{{$user->dob}}" 
+                                id="profileBirthdayInput"
+                                max="{{ date('Y-m-d', strtotime('-18 years')) }}"
+                                required />
+                            @error('dob')
+                            <div class="">{{$message}}</div>
+                            @enderror
                         </div>
                         <div class="col-lg-12">
                             <label for="profileAddress1Input" class="form-label">Address</label>
