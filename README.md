@@ -16,13 +16,13 @@ goals.
 ### Create a New Folder and Open the Folder in Terminal and Run the following command 
 
 ```
-git clone https://github.com/sahith53/Digital-Fitness-Platform.git
+git clone https://github.com/Sahith53/FITNESS_HUB.git
 ```
 
 ### Step 2 - Open the Folder inside your code Editor or use `cd` to change directory
 
 ```
-cd Digital-Fitness-Platform
+cd FITNESS_HUB
 ```
 
 ### Step 3 - Run the following command to update the composer and install all dependencies
